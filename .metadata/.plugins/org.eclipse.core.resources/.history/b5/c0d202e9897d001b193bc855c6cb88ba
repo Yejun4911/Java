@@ -1,0 +1,5 @@
+package com.encore.vo;
+
+public class Magzine {
+
+}

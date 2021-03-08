@@ -1,0 +1,6 @@
+package com.encore.vo;
+
+public class Manager {
+	private String name;
+	private MyDate brithDay;
+}

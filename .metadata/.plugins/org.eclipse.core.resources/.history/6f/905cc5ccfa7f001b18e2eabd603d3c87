@@ -1,0 +1,7 @@
+package com.encore.service.impl;
+
+public class Snippet {
+	
+	public abstract void setKind(); //구멍(?) 자손들의 차이점을 결정짓는 부분
+}
+

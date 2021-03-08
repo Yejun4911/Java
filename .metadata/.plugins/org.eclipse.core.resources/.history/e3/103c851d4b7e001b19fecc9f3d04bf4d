@@ -1,0 +1,13 @@
+package com.encore.test;
+
+import com.encore.service.EmpolyeeService;
+
+public class EmployeeServiceTest {
+
+	public static void main(String[] args) {
+		EmpolyeeService service = new EmpolyeeService();
+			
+
+	}
+
+}

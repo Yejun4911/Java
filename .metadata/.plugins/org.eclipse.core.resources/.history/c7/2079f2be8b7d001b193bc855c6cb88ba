@@ -1,0 +1,8 @@
+package com.encore.service;
+
+public class BookManager {
+	private int intnumberOfBooks;
+	private int idx;
+	
+
+}

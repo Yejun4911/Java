@@ -1,0 +1,11 @@
+package self.bank;
+
+public class Customer {
+	private String name;
+	private int ssn; //ÁÖ¹Î¹øÈ£
+	private Account account;
+	private Address address;
+	
+	
+	
+}

@@ -1,0 +1,18 @@
+package com.encore.service;
+
+import com.encore.vo.Book;
+
+public class BookManager {
+	private int numberOfBooks;
+	private int idx;
+	
+	public int getNumberOfBooks() {}
+	public void insertBook(Book book) {}
+	public Book[] getAllBook() {}
+	public saerchBookBylsbn(String isbn) {}
+	public saerchBookByTitle(String isbn) {}
+	public saerchBookByPublisher(String isbn) {}
+	public saerchBookByPrice(String isbn) {}
+	public double getSumpriceOfBooks() {}
+	public double getAveragePriceOfBooks() {}
+}

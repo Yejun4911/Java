@@ -1,0 +1,5 @@
+package com.encore.service;
+
+public class BookManager {
+
+}

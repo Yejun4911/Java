@@ -1,0 +1,15 @@
+package fly.test;
+
+public class FlyerTest1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//1. 폴리몰피즘 방식으로 자식객체를 3개 생성...
+		// 인터페이스는 객채생성의 대상이 아니고 객체를 생성하기 위한 타입으로서만 존재
+		// 
+		Flyer bird = new bird();
+		Flyer superman = new SuperMan();
+		Flyer airplane = new AirPlane();
+	}
+
+}

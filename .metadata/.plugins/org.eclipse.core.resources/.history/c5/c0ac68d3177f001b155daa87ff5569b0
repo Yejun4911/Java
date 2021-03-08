@@ -1,0 +1,87 @@
+package com.encore.service;
+
+import com.encore.vo.Book;
+
+public class BookManager {
+	private int numberOfBooks;
+	private int idx;
+	private Book[] bk;
+	public BookManager() {
+		idx=0;
+		bk = new Book[100];
+	}	
+	public int getNumberOfBooks() {
+		return idx;
+	}
+	public void insertBook(Book book) {
+		bk[idx++]=book;
+	}
+	public Book[] getAllBook() {
+		return bk;
+	}
+	public String searchBookBylsbn(String isbn) {
+		for(Book i : bk) {
+			if(i!=null) {
+				if(i.getIsbn().equals(isbn)) {
+					return i.toString();
+				}
+						
+			}
+		}
+		return null;
+	}
+	
+	
+	public String searchBookByTitle(String title) {
+		for(Book i : bk) {
+			if(i!=null) {
+				if(i.getTitle().equals(title)) {
+					return i.toString();
+				}
+						
+			}
+		}
+		return null;
+	}
+
+	public String searchBookByPublisher(String publisher) {
+		for(Book i : bk) {
+			if(i!=null) {
+				if(i.getPulisher().equals(publisher)) {
+					return i.toString();
+				}
+						
+			}
+		}
+		return null;
+	}
+	public String searchBookByPrice(double price) {
+		for(Book i : bk) {
+			if(i!=null) {
+				if(i.getPrice()==price) {
+					return i.toString();
+				}
+						
+			}
+		}
+		return null;
+	}
+	public double getSumpriceOfBooks() {
+		double sum=0;
+		for(Book i : bk) {
+			if(i!=null) {
+				sum+=i.getPrice();
+			}
+		}
+		return sum;
+	}
+	public double getAveragePriceOfBooks() {
+		double sum=0;
+		for(Book i : bk) {
+			if(i!=null) {
+				sum+=i.getPrice();
+			}
+		}
+		return sum/idx;
+	}
+}

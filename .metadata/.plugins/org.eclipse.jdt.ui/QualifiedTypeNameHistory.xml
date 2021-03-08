@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.encore.vo.Product"/>
+    <fullyQualifiedTypeName name="com.encore.vo.Customer"/>
+    <fullyQualifiedTypeName name="com.encore.vo.Book"/>
+    <fullyQualifiedTypeName name="com.encore.service.BookManager"/>
+    <fullyQualifiedTypeName name="poly.service.EmployeeService"/>
+    <fullyQualifiedTypeName name="fly.child.AirPlane"/>
+    <fullyQualifiedTypeName name="fly.child.SuperMan"/>
+    <fullyQualifiedTypeName name="fly.child.bird"/>
+    <fullyQualifiedTypeName name="fly.parent.Flyer"/>
+    <fullyQualifiedTypeName name="pizza.service.PizzaService"/>
+    <fullyQualifiedTypeName name="pizza.child.BulgogiPizza"/>
+    <fullyQualifiedTypeName name="pizza.service.impl.PizzaServiceImpl"/>
+    <fullyQualifiedTypeName name="com.encore.service.impl.BookManagerImpl"/>
+</qualifiedTypeNameHistroy>

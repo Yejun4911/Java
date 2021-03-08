@@ -1,0 +1,11 @@
+package com.encore.service;
+
+public class BookTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BookManager service = new BookManager();
+		service.insertBook("1","로미오와 줄리엣","셰익스피어","최예준",15000.0,"A");
+	}
+
+}

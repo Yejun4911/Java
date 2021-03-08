@@ -1,0 +1,20 @@
+package com.encore.service;
+
+import com.encore.vo.Book;
+
+public class BookTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BookManager service = new BookManager();
+		service.insertBook(new Book("1","로미오와 줄리엣","셰익스피어","최예준",15000.0,"A"));
+		service.insertBook(new Book("2","햄릿","셰익스피어","최예준",35000.0,"B"));
+		System.out.println(service.getNumberOfBooks());
+		
+		Book[] bk = service.getAllBook();
+		for(Book i : bk) System.out.println(i);
+		
+		
+	}
+
+}
