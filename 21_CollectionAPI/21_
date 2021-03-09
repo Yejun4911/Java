@@ -1,0 +1,11 @@
+Collection API --> 인터페이스의 특징
+
+가장 원시적으로 자료를 저장
+(원시적 ==> 순서X,중복O)
+
+set(순서x,중복x) <Unique>
+List(시작점과 끝점을 가지면서 환원형으로 자료를 저장 순서O,중복O)<Ordered>
+Map ( properties)
+java 진영
+--------> 기술 set (포기하지 않는 파일) -> properties 파일(key,value) <서버,DB정보(메타데이터)>
+

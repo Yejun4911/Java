@@ -12,5 +12,13 @@
     <fullyQualifiedTypeName name="pizza.service.PizzaService"/>
     <fullyQualifiedTypeName name="pizza.child.BulgogiPizza"/>
     <fullyQualifiedTypeName name="pizza.service.impl.PizzaServiceImpl"/>
+    <fullyQualifiedTypeName name="com.sun.tools.javac.util.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="com.encore.vo.Engineer"/>
+    <fullyQualifiedTypeName name="com.encore.service.impl.EmployeeListServiceImpl"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.encore.service.impl.BookManagerImpl"/>
 </qualifiedTypeNameHistroy>
