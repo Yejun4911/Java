@@ -1,0 +1,28 @@
+# 예외사항
+
+프로그래밍 과정중 발생하는 예기치 못한상황
+
+1) 런타임 계열 
+2) Compile 계열
+
+
+RunTimeException-> Compile 가능 but 실행 X = > 컴파일러가 인식X
+ -ArrayIndexOutOfBOunds
+ -NullPointer~
+ -
+IOException -> Compile, 실행 X = > 컴파일러가 인식O
+
+Exception 처리하는 기법
+1) 예외 바로 처리
+2) 예외를 던지는 방법
+-> Try, catch, finally , throws, throw
+
+
+Compile 계열 == IOException
+
+
+사용자 정의 Exception -> UserException
+
+1.내가 직접 예외클래스 만들어서 사용
+2. 특정한 조건에서 고의적으로 예외를 발생 시키는것
+----> 강력한 제어문으로 사용
