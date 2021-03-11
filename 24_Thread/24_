@@ -1,0 +1,21 @@
+Thread
+
+1) Procees 란? 실행중인 프로그램 <CPU 점유>
+Multi -Processing System < Process들이 여러개>
+Multi - Tasking 동시에 여러 작업 진행
+
+2) Thread ? 프로세스 내에서 진행되는 세부적인 작업단위
+Thread <어원(실타래)>
+카카오톡.exe
+ex) 메세지보내는작업 (t1) 파일전송(t2) ==> Multi - Thread System
+
+
+CPU는 한개밖에 점유하지 못함 동시에 쓰이는것 처럼보이지만 time-sliced 방식으로 진행 --> Multi Processing
+// 메모리 공유
+
+Thread 작성법
+1. extend Thread
+2. implements Runtime
+
+->우선순위가 높은녀석 부터 점유 
+->우선순위가 낮으면 짧고 느리게 실행
