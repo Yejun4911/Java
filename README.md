@@ -10,9 +10,10 @@ java HotSpot(TM) 64-Bit Server VM (build 25.241-b07, mixed mode)
 
 
 #00 (jre,jdk,jvm)
+=================
 - - -
 
-#### 범위 jdk > jre > jvm
+#### range jdk > jre > jvm
 - - - 
 ## jvm(Java Virutal Machine)
 - - -
