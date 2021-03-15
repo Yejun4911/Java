@@ -1,0 +1,11 @@
+Stream 
+"데이터의 흐름"
+
+1) Stream안의 Data가 어떤 종류
+	- Character 계열 Reader/Writer
+	- Byte 계열 InPutStream/OupPutStream
+2) Source,  Sink에 직접 연결 여부/ Stream에 연결
+	-Node(기본)
+	-Filter(보조)
+	
+	File에 있는 문자(->FileReader) 데이터를 읽어서 다른파일(FileWriter)로 출력하는 코드 ->Node계열
