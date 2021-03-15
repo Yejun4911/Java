@@ -16,6 +16,5 @@ java HotSpot(TM) 64-Bit Server VM (build 25.241-b07, mixed mode)
 * range jdk > jre > jvm
 - - - 
 * jvm(Java Virutal Machine)
-- - -
-- 자바 가상머신의 줄임말로 자바프로그램 등을 컴파일하여 만들어진 바이트코드를 실행해주는 가상 머신이다.
+  * 자바 가상머신의 줄임말로 자바프로그램 등을 컴파일하여 만들어진 바이트코드를 실행해주는 가상 머신이다.
 
