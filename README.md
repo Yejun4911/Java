@@ -20,10 +20,3 @@ java HotSpot(TM) 64-Bit Server VM (build 25.241-b07, mixed mode)
   * JVM은 JAVA와 OS사이에서 중개자 역할을 수행하여 JAVA가 OS에 구애받지 않고 재사용을 가능하게 해준다.
   * 메모리관리, Garbage collection 
 
-
-<<<<<<< HEAD
-Java HotSpot(TM) 64-Bit Server VM (build 25.241-b07, mixed mode)
-
-# 00 JRE,JDK,JVM
-=======
->>>>>>> e3234d3d49daa0cbb13da761218089d9603bab62
