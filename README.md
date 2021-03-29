@@ -63,7 +63,8 @@ java HotSpot(TM) 64-Bit Server VM (build 25.241-b07, mixed mode)
   * {}안에서 아무런 동작도 하지 않는 생성자. 
 * has a 관계(포함관계)
   * 어떤 클래스 A가 또 다른 클래스인 B가 가진 기능을 사용하고 싶을때 B 클래스를 포함하면 B 클래스의 기능을 사용할 수 있다.    
+  
 #06 06_Operator
-
+===============
 * scanner
 * 증감 연산자
