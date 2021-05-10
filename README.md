@@ -46,6 +46,10 @@
 ### Garbage Collector
 * JVM의 Garbarge Collector 가 더이상 사용되지 않는 인스턴스를 찾아 메모리에서 삭제하는 행위를 하게 된다.
 * Garbage Collection는 Garbage Collector가 Heap 영역의 메모리를 JVM이 판단해 더이상 사용되지 않는 인스턴스는 자동으로 할당 된 메모리를 삭제하는 역할을 하는 행위이다.
+
+### FQCN
+* 클래스가 속한 전체 패키지명을 포함한 이름을 말한다.
+
 # 00 (jre,jdk,jvm)
 
 * range jdk > jre > jvm
@@ -144,4 +148,30 @@
   * 캡슐화(영어: encapsulation)는 객체 지향 프로그래밍에서 다음 2가지 측면이 있다: 객체의 속성(data fields)과 행위(메서드, methods)를 하나로 묶고, 실제 구현 내용 일부를 외부에 감추어 은닉한다. 
   * 다른 클래스에서 직접적으로 접근 할 수 없도록 필드 앞에 private 지정한다.
   * 클래스의 필드에 접근은 setter()/getter() 한다. // setter,getter 다른 클래스에서도 서로 접근할 수 있도록 Public
-   
+* 접근 제한자 (public,private,pretected)
+
+#09_Looping
+===========
+* 반복문 
+  * 반복문의 문법은 몇가지가 있다. 각각의 구문은 서로 대체 가능하기 때문에 상황과 취향에 따라서 선택해서 사용하면 된다.
+  * 1)for 2)while -> 비교 : 반복의 횟수를 모를 때 while 사용
+  * continue : 반복문 지속 break: 반복문 빠져 나간다
+
+#10_Array,11_Array_ClassType,12_Array_MarketOutlet
+==========
+* 배열
+  * 배열이란 자료형의 종류가 아닌 자료형의 집합을 의미한다. 
+* 배열의 특징
+  * Resizing 불가능, 배열은 객체, Resizing은 안되지만 사이즈가 다른 배열의 데이터를 복사 사용 할수는 있다. System.arrycopy()
+* 클래스도 배열로 가능 !
+
+#13_inheritance
+===============
+* 상속
+  * 부모가 가진 모든것을 자식에게 물려주는 것
+  * IS-A 관계 
+* 클래스 상속을 위해서는 extends 라는 키워드를 사용한다.
+* 부모 Class
+  * 자식들의 공통적인 성질을 일반적인 성질로 가지고 있는 클래스 Super
+* 자식 Class
+  * 부모 Class로 부터 모든 것을 물려받고 자기 자신만의 멤버를 추가하는 Class  
