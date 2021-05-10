@@ -44,7 +44,8 @@
 * 반환값이 없으므로 void나 자료형 작성 X
 
 ### Garbage Collector
-
+* JVM의 Garbarge Collector 가 더이상 사용되지 않는 인스턴스를 찾아 메모리에서 삭제하는 행위를 하게 된다.
+* Garbage Collection는 Garbage Collector가 Heap 영역의 메모리를 JVM이 판단해 더이상 사용되지 않는 인스턴스는 자동으로 할당 된 메모리를 삭제하는 역할을 하는 행위이다.
 # 00 (jre,jdk,jvm)
 
 * range jdk > jre > jvm
