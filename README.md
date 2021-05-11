@@ -165,14 +165,16 @@
   * Resizing 불가능, 배열은 객체, Resizing은 안되지만 사이즈가 다른 배열의 데이터를 복사 사용 할수는 있다. System.arrycopy()
 * 클래스도 배열로 가능 !
 
-#13_inheritance
+#13_inheritance ~ #16_Polymorphism
 ===============
 * 상속
   * 부모가 가진 모든것을 자식에게 물려주는 것
   * RelationShop
     * IS-A 관계 <Vertical>
     * HAS A 관계 <Horizontal>
-
+    
+* Virtual Method Invocation은 상속관계에서 오버라이딩된 동일한 이름의 method가 충돌했을 때 실행타임 시점의 메소드가 컴파일 타임 시점의 메소드보다 우선적으로 실행된다.
+  * Ex) Parent의 getName()을 Children이 오버라이딩 한 상태일 경우 Parent p = new Chlidren() 으로 객체를 생성했을 때 p.getName(); 과 같이 메소드를 사용하면 Parent의 메소드를 사용할지   Children의 메소드를 사용할 지 혼돈이 된다. JVM은 컴파일 시점인 Parent의 method를 사용하지 않고 실행타임 시점인 Children의 method를 사용한다. 이것을  Virtual Method Invocation 라고 부른다.
 * 클래스 상속을 위해서는 extends 라는 키워드를 사용한다.
 * 부모 Class
   * 자식들의 공통적인 성질을 일반적인 성질로 가지고 있는 클래스 Super
@@ -188,3 +190,35 @@
     * 메소드 오버로딩 : 클래스 내에 사용하려는 이름과 같은 이름의 메소드가 있어도 매개 변수의 개수 또는 타입이 다르면, 동일한 이름을 사용해 메소드를 정의 할 수 있는 것
 * Polymorphism
   * 부모의 타입으로 여러 개의 자식 객체들을 생성 하는 것 
+* Object Casting
+  * 부모클래스에 존재하지 않는, 자식에서 만들어진 메소드이기 때문에 부모변수로 접급하면 안되고 자식 클래스 변수앞에 casting해 자식메소드에 접근한다.
+* Collection
+  * 동종간의 집합체 : 같은 Class의 객체끼리 집합
+  * 이종간의 집합체 : 폴리모피즘을 통해 다른 Class의 객체와 함께 집합을 이룬다 <효율성 높음>
+
+#17_Static 
+==========
+* Static
+  * 객체생성과정 없이 메모리에 올라간다.
+  * 지역변수로는 선언 불가능
+  * Class File Loader 과정에서 메모리에 올라간다.
+  * Static한 성질의 필드는 생성된 객체들에서 서로 공유
+  * static 블락 안 this 사용 불가
+  * static,final 종종 같이 씀
+* final
+  * final 키워드는 엔티티를 한 번만 할당합니다. 즉, 두 번 이상 할당하려 할 때 컴파일 오류가 발생하여 확인이 가능합니다.
+  * 상수지정 기능가능
+  * 상속금지 기능가능
+  * 오버라이딩 금지 기능 가능
+* interface
+  * 사용자와 작성자 간의 contract이다
+  * 필드 X, Abstract Method로 구성 자식에게 Template 제공
+  * implements사용 -> 오버라이딩
+  * 구성요소
+    * static final, public abstract
+  * 다중상속 허용 X 
+    * Virtual Method invocation 때문에 문제가 생긴다.
+    * 코드의 불안정성 야기
+  * Interface(미완의 설계도) -> Abstract Class(부분적인 미완의 설계도) -> Class(설계도) ( >순으로 구체화 )
+  * Abstract Class의 용도
+    *     
