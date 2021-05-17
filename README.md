@@ -289,4 +289,23 @@
 * Multi-tasking : time-sliced 방식으로 우선순위를 가지고 동작한다.
   * Multi-processing
   * Multi-threading => 한 프로세스 내에서 자원을 공유하므로 문제가 발생할 수 있다. 
-   
+* Thread 종류
+  * 데몬 Thread : 작업 Thread를 호출, main : 프로세스 안에는 하나의 데몬 Thread가 존재한다
+  * 작업 Thread : Thread extends, Runnable implements 통해 작업 클래스를 생성
+* Thread 작성법
+  * Thread 상속 받아 사용
+  * Runnable interface이므로 다중 상속 가능
+  * Thread를 작동 시킬때는 run()이 아닌, start()를 사용 JVM이 그 thread의 run()을 호출한다.
+* Thread 작동 순서
+  * start() 호출한다. <runnable 상태가 됨>
+  * Queue stack(대기열)에 올라간다. 
+  * Queue stack에 있는 객체 중 priority가 제일 높은 것부터 cpu에 올라감 < 하나만 가능> -> JVM이 run()을 내부적으로 호출
+  * run()가 다 끝난 thread는 메모리에서 자동으로 내려오고 CPU를 반환함(Death)
+    * 실행중인 thread의 상태를 조정할 때는 sleep(),yield(),join()을 사용한다.
+    * sleep()은 try~catch로 감싸 주어야한다.
+    * stop()은 사용하지 않는다. 실행이 끝나면 자동종료되는데 stop을 사용하면 강제 종료된다.
+    * start()는 개발자가 호출, run()은 JVM의 scheduler가 내부적으로 호출
+* Thread를 사용하면 작업을 병렬적으로 처리할 수있다.
+* Thread 간의 자원 공유
+  * process의 데이터를 여러 thread에서 서로 공유한다.    
+ 
