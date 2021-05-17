@@ -50,6 +50,17 @@
 ### FQCN
 * 클래스가 속한 전체 패키지명을 포함한 이름을 말한다.
 
+### Anonymous inner class 
+* new 뒤에 Comparator가 와서 comparator가 객체 생성을 한 것처럼 보인다. 하지만 Comparator은 인터페이스고, 인터페이스는 객체 생성 할 수 없다.
+* 익명의 클래스가 Comparator 인터페이스를 구현한 채로 생성되어 객체를 만든 것이다.
+* 단 하나의 추상 클래스 또는 단 하나의 인터페이스를 바로 생성할 수 있음
+* 인터페이스나 추상 클래스 자료형으로 변수를 선언한 후, 익명 내부 클래스를 생성해 변수에 대입할 수 있음
+* 인터페이스와 추상 클래스 내부의 모든 추상 메소드를 반드시 오버라이딩 해야 함
+* inner class 
+  * 클래스 내부에 작성하는 클래스
+  * 내부 클래스는 외부 클래스의 접근 제어자에 상관 없이 멤버변수, 메소드에 접근 가능
+  * 외부 클래스에서 내부 클래스에 접근하기 위해서는 내부 클래스 객체를 생성해야 함  
+
 # 00 (jre,jdk,jvm)
 
 * range jdk > jre > jvm
@@ -222,4 +233,60 @@
   * Interface(미완의 설계도) -> Abstract Class(부분적인 미완의 설계도) -> Class(설계도) ( >순으로 구체화 )
   * Abstract Class의 용도
     * 추상클래스(Abstract Class)는 인터페이스의 역할도 하면서 뭔가 구현체도 가지고 있는 자바의 돌연변이 같은 클래스이다. 혹자는 추상클래스는 인터페이스로 대체하는것이 좋은 디자인이라고도 얘기한다.    
-#21_CollectionAPI
+
+#21_CollectionAPI~22_CollectionAPI
+===================================
+* Collection : 여러 원소들을 담을 수 있는 자료구조 
+  * Interface Hierarchy 
+  * Set -> HashSet : Colection 다음으로 원시적이며 순서를 가지지 않으며 중복이 되지 않는다.
+  * List-> ArrayList,Vector,LinkedList : 시작점과 끝점을 가지면서 환원형으로 자료를 저장, 원시적이지 않은 자료형으로 순서가 존재하며 중복이 가능하다. 
+    * ArrayList 순차적, 내부적 index, 객체로 이루어져 있으며, 여러개의 값이 merge 되어 있다. 이를 정렬하기 위해서는 어떤 값으로 정렬 할 것인지 정해줘야 하는때 이때 사용하는 것이 Comparable, Comparator
+      * Comparable : compareTo 메소드만 존재, 정렬 수행시 기본적으로 적용되는 정렬 기준이 되는 메소드를 정의 하는 인터페이스
+      * Comparator : vo파일을 건드리지 않아도 되고 implements 할 필요도 없다. 즉 overdding 필요 없음, 정렬 가능한 클래스들의 기본 정렬 기준과 다르게 정렬 하고 싶을때  
+    * LinkedList 비순차적, 데이터 추가, 삭제 용이 
+    * Vector, arrayList 차이 : Vector -> Synchronized 처리로 인해 무거워짐 / ArrayList -> Synchronized를 사용자가 하도록 유도
+  * Queue : 알고리즘에서 사용
+* Map : Collection의 child가 아니며 독자적이며 set,list와 다른 저장 방법을 사용 <Key,value>함께 저장하며 순서가 없고 Key 는 Unique
+  * HashTable 과 HashMap 차이
+    * HashTable  : Synchronized 처리로 인해 무거워짐
+    * HashMap : Synchronized를 사용자가 하도록 유도
+* Properties 클래스
+  * MAP 계열의 컬렉션 프레임워크와 비슷하게 동작하는 파일, "Key = Value" 형태로 된 "파일이름.properties" 파일 또는 Xml 파일, key를 주면 Value를 반환하는 기능을 가짐, DB의 연결정보 등을 저장해두는 용도로 많이 쓰임
+  * Enum(열거형) 클래스나 MAP 컬렉션 API와 비슷한 개념의 파일 버전입니다. 코드를 건들이지 않고도 정보를 변경할 수 있다는 강점이 있습니다.
+* Enumeration/ Iterator/ ListIterator 
+  * Enumertation 인터페이스는 Collection 프레임워크가 만들어기 전, Iterator의 이전 버전이다. 
+  * 가능하면 Enumeration 대신 Iteration를 사용을 권장하고 있다.
+  * iterator/Listlterator -> Java초기에 개발된 Enumeration의 확장이 lterator,lteraotr를 상속받고 메소드를 추가한 것이 Listlterator
+* Generic
+  * 제네릭 타입을 사용함으로써 잘못된 타입이 사용될 수 있는 문제를 컴파일 과정에서 제거할 수 있기 때문입니다. 자바 컴파일러는 코드에서 잘못 사용된 타입 때문에 발생하는 문제점을 제거하기 위해 제네릭 코드에 대해 강한 타입 체크를 합니다. 
+  * 사용법
+    * 제네릭 타입은 타입을 파라미터로 가지는 클래스와 인터페이스를 말합니다. 제네릭 타입은 클래스 또는 인터페이스 이름 뒤에 < > 부호가 붙고 사이에 타입 파라미터가 위치합니다.   
+
+#23_Exception
+==============
+* Exception
+  * Exception은 프로그래밍 과정 중 발생하는 예기치 못한 상황을 의미힌다.
+  * 예외는 메소드 블럭안에서 line별로 발생
+  * Throwable > Exception, Error
+    * Exception : 개발자가 예외상황 컨트롤 가능
+    * Error : 개발자의 영역이 아님
+  * Exception > RuntimeException, IOException
+    * RuntimeException : 컴파일러가 에러를 인식하지 않고 실행시 에러가 발생한다. // ArrayIndexOutofBoundsException,NullPointerException,ArithmeticException,NegativeArraySizeException
+    * IOException : 컴파일러가 에러를 인식한다, 입력과 출력, 코드 작성 시 예외가 발생하기 때문에 코드를 작성할 때 예ㅖ외를 발생 시켜야한다. // IOException,FileNotFoundException,EOFException
+    * UserException : 직접 예외 Class를 만들어 사용한다, 강력한 제어문으로 이용 (Exception을 상속 받아 사용)
+  * Exception Keyword
+    * try catch : try블록에는 예외가 발생 할 수 있는 코드가 위치하고, catch블록은 발생한 예외를 잡아 예외처리를 한다, 
+    * finally : 예외 발생 여부와 상관없이 무조건 실행 // 실행되지 않는 경우 -> finally block 안에서 또 다른 예외가 발생하는 경우, finally block을 실행 도중 PC 전원이 꺼지는 경우
+  * throws
+    * 발생할 예외를 던진다. 던져진 예외는 그 메소드를 호출한 곳에 날아가서 터진다. // main도 exception을 throws를 사용할 수 있고 JVM으로 던져진다.
+  * throw
+    * 고의적으로 예외를 발생 시키는 키워드
+
+#24_Thread
+==========
+* Process : 실행 중인 프로그램
+* Thread : Process 내에서 진행되는 세부적인 작업 단위
+* Multi-tasking : time-sliced 방식으로 우선순위를 가지고 동작한다.
+  * Multi-processing
+  * Multi-threading => 한 프로세스 내에서 자원을 공유하므로 문제가 발생할 수 있다. 
+   
