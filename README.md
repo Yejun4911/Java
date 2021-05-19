@@ -87,7 +87,8 @@
 * Byte코드와 Binary 코드의 차이  
   * Byte 코드는 jvm 같은 가상 머신이 이해 할 수 있는 코드
   * Binary 코드는 CPU가 이해 할 수 있는 코드
-
+* transient 키워드
+  * 객체의 Filed 중 노출하면 위험한 정보에 해당 하는 값들을 transient 키워드를 필드 앞에 지정한다. 
 #01_JavaHello
 =============
 
@@ -307,5 +308,48 @@
     * start()는 개발자가 호출, run()은 JVM의 scheduler가 내부적으로 호출
 * Thread를 사용하면 작업을 병렬적으로 처리할 수있다.
 * Thread 간의 자원 공유
-  * process의 데이터를 여러 thread에서 서로 공유한다.    
- 
+  * process의 데이터를 여러 thread에서 서로 공유한다.
+* Synchronized
+  * 자원을 공유한 상황에서 하나의 Thread가 일을 완전히 마치기 전에 다른 Thread에게 제어권을 뺏겨 버리면 문제가 발생
+  * 하나의 Thread가 일을 마치기 전에 다른 Thread로 인해 자원의 값이 변경된다.
+  * Sychronized : 공유하는 자원에 Lock, 공유자원에 접근하는 Tread는 Lock을 쥐고 일을 처리하게 되고 그 동안 공유 자원은 잠겨진다 , 나머지는 waiting 상태로 기다린다 , 첫번째 Thread의 run()이 끝나면 자동으로 Lock해제되고 lock은 원래 위치에 반환된다, Waiting 하고 있던 Thread 중 priority가 제일 높은 Thread가 다시 반환 된 lock을 쥐고 일을 수행한다.
+  * Method 방식 권장 Method에 synchronized 키워드를 붙여 사용
+* Deadlock
+  * 동기화 처리된 2개 이상의 Thread에서 정작 자신이 가진 Lock을 반환하지 않으면서 상대 Thread의 Lock이 해제 되기만을 기다리는 교착 상태를 말한다.
+  * 원인 : Thread간의 Communication의 부재
+  * 해결 : Wait(), notify()
+# 25_Steam
+==========
+* Stream
+  * 데이터의 흐름
+  * Source : 데이터의 근원, Sink : 데이터의 종착지 , Stream : 데이터가 흘러가는 관
+  * FIFO, 단방향 구조, node 계열과 ,filter 계열로 나뉜다.
+  * Byte 계열
+    * 입력-> InputStream 출력 -> OutputStream
+  * Character 계열
+    * 입력 -> Reader 출력 -> Writer
+  * File 계열
+  * Object Stream 계열
+    * 객체를 입,출력할 수 있는 Stream(보조 Stream) 
+  * 데이터의 흐름 
+    * 기본스트림(node) -> Source와 Sink 직접 연결
+    * 보조스트림(filter) -> 또 다른 Stream에 연결
+    * 보조 Stream 사용 이유: 보조 Stream에 있는 Powerful한 기능 사용이 가능하다. (Stream과 Stream이 wrapping되면 Stream이 겹쳐지는 부분, Buffer 공간이 생긴다. 그 공간에서 데이터를 이 가능하다)
+  * Stream 코드 작성 패턴
+    * 입력,출력 스트림을 한꺼번에 생성
+    * 반복문 안에서 데이터를 전부 다 읽는다
+    * 반복문 안에서 읽어 들인 데이터를 Sink 방향으로 전부 다 출력한다.  
+  * Class Path , 출력용 파일 
+    * class path system : class path system이 src를 자동으로 만든다. 자바파일 src 밑에 넣어지지만, 일반 파일은 자동으로 src 아래 저장되지 않아  파일을 src 하위에 만들어 주었다면 파일을 호출할때 src 경로를 명시해 주어야 한다.
+    * 출력용 파일 :  Stream이 생성될 때 명시해 놓은 디렉토리가 존재한다면 해당 파일을 만들고 그곳에 출력을 한다 
+  * 문자 기반의 출력용 Stream일 경우 데이터를 file에 뿌릴 때 한 라인씩/ 한 글자씩 뿌리지 않는다. Stream을 통해서 읽어들인 내용을 특정 buffer 공간에 쌓아놓은 후 어느정도 쌓이면 한번에 파일에 뿌린다. 이때 자투리 데이터카 출력이 되지 않는 상황이 발생한다. .close()를 사용하면 남아있는 데이터를 다 뿌리고 Stream을 닫는다. .flush()를 사용해 기다리지 않고 auto flushing 기능을 통해 데이터를 뿌려줄 수 도 있다
+
+# 27~28_Socket
+=============
+* Client: Server에 서비스를 요청(request)
+* Server: Client가 요청한 서비스를 처리, 처리한 결과를 다시 응답(response)
+* Server
+  * Socket 생성, Client의 socket 리턴, 입력 Stream
+* Client
+  * Socket 생성 , 출력 Stream 생성 , Stream 패턴
+* 하나의 통신 단위 : request&response 까지 --> 클라이언트는 서베에게 request 한 후 response 할 때 까지 blocking 상태로 머물러 있다.    
