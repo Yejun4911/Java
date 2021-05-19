@@ -285,6 +285,7 @@
 
 #24_Thread
 ==========
+
 * Process : 실행 중인 프로그램
 * Thread : Process 내에서 진행되는 세부적인 작업 단위
 * Multi-tasking : time-sliced 방식으로 우선순위를 가지고 동작한다.
@@ -320,6 +321,7 @@
   * 해결 : Wait(), notify()
 # 25_Steam
 ==========
+
 * Stream
   * 데이터의 흐름
   * Source : 데이터의 근원, Sink : 데이터의 종착지 , Stream : 데이터가 흘러가는 관
@@ -345,7 +347,8 @@
   * 문자 기반의 출력용 Stream일 경우 데이터를 file에 뿌릴 때 한 라인씩/ 한 글자씩 뿌리지 않는다. Stream을 통해서 읽어들인 내용을 특정 buffer 공간에 쌓아놓은 후 어느정도 쌓이면 한번에 파일에 뿌린다. 이때 자투리 데이터카 출력이 되지 않는 상황이 발생한다. .close()를 사용하면 남아있는 데이터를 다 뿌리고 Stream을 닫는다. .flush()를 사용해 기다리지 않고 auto flushing 기능을 통해 데이터를 뿌려줄 수 도 있다
 
 # 27~28_Socket
-=============
+===============
+
 * Client: Server에 서비스를 요청(request)
 * Server: Client가 요청한 서비스를 처리, 처리한 결과를 다시 응답(response)
 * Server
