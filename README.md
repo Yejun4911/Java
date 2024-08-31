@@ -348,7 +348,6 @@
 
 # 27~28_Socket
 ===============
-
 * Client: Server에 서비스를 요청(request)
 * Server: Client가 요청한 서비스를 처리, 처리한 결과를 다시 응답(response)
 * Server
