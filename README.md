@@ -2,7 +2,7 @@
 
 ### version
 * java version "1.8.0_241"   
-* java(TM) SE Runtime Environment (build 1.8.0_241-b07)   
+* java(TM) SE Runtime Environment (build 1.8.0_241-b07)      
 * java HotSpot(TM) 64-Bit Server VM (build 25.241-b07, mixed mode)
 
 ### Camel Case 
